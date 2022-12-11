@@ -1,5 +1,5 @@
 # Combined Billing System
-A combined billing system, developed as a case study for the midterm project for the CSC103-Programming Fundamentals course at COMSATS University Islamabad.
+A combined billing system. Developed as a case study for the semester project for the CSC103-Programming Fundamentals course at COMSATS University Islamabad.
 ## Salient features
 * Add new records.
 * Delete records.
