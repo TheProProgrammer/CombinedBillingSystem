@@ -1,0 +1,69 @@
+inputter:
+
+        for (byte sector = 1; sector <= dataset.length; sector++)
+        {
+            for (byte subSector = 1; subSector <= dataset[0].length; subSector++)
+            {
+                for (byte street = 1; street <= dataset[0][0].length; street++)
+                {
+                    for (byte house = 1; house <= dataset[0][0][0].length; house++)
+                    {
+                        for (byte portion = 1; portion <= dataset[0][0][0][0].length; portion++)
+                        {
+
+                            System.out.printf("CID: %d\n",dataset[sector-1][subSector-1][street-1][house-1][portion-1].CID);
+
+                            System.out.printf("Name: %s\n",dataset[sector-1][subSector-1][street-1][house-1][portion-1].customerName);
+
+                            System.out.printf("Electricity Reading: %d\n",dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[0].currentReading);
+
+                            System.out.printf("Gas Reading: %d\n",dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[1].currentReading);
+
+                            System.out.printf("Water Litres: %d\n",dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[2].currentReading);
+
+                            System.out.printf("Internet Reading: %d\n",dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[3].currentReading);
+                        }
+                    }
+                }
+            }
+        }
+
+
+setter:
+
+
+ for (byte sector = 1; sector <= dataset.length; sector++)
+        {
+            for (byte subSector = 1; subSector <= dataset[0].length; subSector++)
+            {
+                for (byte street = 1; street <= dataset[0][0].length; street++)
+                {
+                    for (byte house = 1; house <= dataset[0][0][0].length; house++)
+                    {
+                        for (byte portion = 1; portion <= dataset[0][0][0][0].length; portion++)
+                        {
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1] = new CBSRecord();
+
+                            long CID = (long) sector *subSector*street*house*house*portion;
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1].CID = CID;
+
+                            System.out.print("Enter Name: ");
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1].customerName = input.nextLine();
+
+                            System.out.print("Enter Electricity Reading: ");
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[0].currentReading = input.nextInt();
+
+                            System.out.print("Enter Gas Reading: ");
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[1].currentReading = input.nextInt();
+
+                            System.out.print("Enter Water Litres Consumed: ");
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[2].currentReading = input.nextInt();
+
+                            System.out.print("Enter Internet reading: ");
+                            dataset[sector-1][subSector-1][street-1][house-1][portion-1].utilities[3].currentReading = input.nextInt();
+                        }
+                    }
+                }
+            }
+        }
+
